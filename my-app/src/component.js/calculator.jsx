@@ -49,19 +49,19 @@ export default function Calculator() {
   }, [result]);
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4 bg-purple-100 rounded shadow">
+    <div className="max-w-md mx-auto m-10 p-5 bg-purple-100 rounded shadow">
       <h2 className="text-xl font-bold mb-4">Calculator</h2>
       <form onSubmit={handleSubmit} className="space-y-2">
-        <input type="number" value={number1} onChange={(e) => setNumber1(e.target.value)} className="w-full border p-2 rounded" placeholder="Enter first number"/>
+        <input type="number" value={number1} onChange={(e) => setNumber1(e.target.value)} className="w-full border border-purple-600 p-2 rounded" placeholder="Enter first number"/>
         <select value={operation} 
-        onChange={(e) => setOperation(e.target.value)} className=" w-1/3 border p-2 rounded flex justify-center items-center flex-col">
+        onChange={(e) => setOperation(e.target.value)} className=" w-1/3 border border-purple-600  p-2 rounded flex justify-center items-center flex-col">
           <option value="+">Add (+)</option>
           <option value="-">Subtract (-)</option>
           <option value="*">Multiply (×)</option>
           <option value="/">Divide (÷)</option>
         </select>
         <input
-          type="number" value={number2} onChange={(e) => setNumber2(e.target.value)} className="w-full border p-2 rounded" placeholder="Enter second number"/>
+          type="number" value={number2} onChange={(e) => setNumber2(e.target.value)} className="w-full border border-purple-600  p-2 rounded" placeholder="Enter second number"/>
         <button
           type="submit"
           className="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-400"
