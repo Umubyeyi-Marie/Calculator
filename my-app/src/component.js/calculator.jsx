@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export default function Calculator() {
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
-  const [operation, setOperation] = useState("");
+  const [operation, setOperation] = useState("+");
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
 
@@ -11,7 +11,7 @@ export default function Calculator() {
     const a = parseFloat(number1);
     const b = parseFloat(number2);
 
-    let res = 0;
+    let res ;
     switch (operation) {
       case "+":
         res = a + b;
@@ -26,7 +26,7 @@ export default function Calculator() {
         res = b !== 0 ? a / b : "Cannot divide by zero";
         break;
       default:
-        res = "Invalid operation";
+        res = 0;
     }
 
     setResult(res);
@@ -53,7 +53,7 @@ export default function Calculator() {
       <h2 className="text-xl font-bold mb-4">Calculator</h2>
       <form onSubmit={handleSubmit} className="space-y-2">
         <input type="number" value={number1} onChange={(e) => setNumber1(e.target.value)} className="w-full border p-2 rounded" placeholder="Enter first number"/>
-        <select value={operation} onChange={(e) => setOperation(e.target.value)} className=" w-1/3 border p-2 rounded flex justify-centeritems-center flex-col">
+        <select value={operation} onChange={(e) => setOperation(e.target.value)} className=" w-1/3 border p-2 rounded flex justify-center items-center flex-col">
           <option value="+">Add (+)</option>
           <option value="-">Subtract (-)</option>
           <option value="*">Multiply (×)</option>
@@ -63,7 +63,7 @@ export default function Calculator() {
           type="number" value={number2} onChange={(e) => setNumber2(e.target.value)} className="w-full border p-2 rounded" placeholder="Enter second number"/>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="w-full bg-blue-400 text-white py-2 rounded hover:bg-blue-200"
         >
           Calculate
         </button>
