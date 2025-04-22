@@ -53,7 +53,7 @@ export default function Calculator() {
       <h2 className="text-xl font-bold mb-4">Calculator</h2>
       <form onSubmit={handleSubmit} className="space-y-2">
         <input type="number" value={number1} onChange={(e) => setNumber1(e.target.value)} className="w-full border p-2 rounded" placeholder="Enter first number"/>
-        <select value={operation} onChange={(e) => setOperation(e.target.value)} className=" w-1/4 border p-2 rounded flex justify-centeritems-center flex-col">
+        <select value={operation} onChange={(e) => setOperation(e.target.value)} className=" w-1/3 border p-2 rounded flex justify-centeritems-center flex-col">
           <option value="+">Add (+)</option>
           <option value="-">Subtract (-)</option>
           <option value="*">Multiply (×)</option>
