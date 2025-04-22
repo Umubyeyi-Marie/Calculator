@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export default function Calculator() {
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
-  const [operation, setOperation] = useState("+");
+  const [operation, setOperation] = useState("");
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
 
@@ -49,7 +49,7 @@ export default function Calculator() {
   }, [result]);
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4 bg-pink-400 rounded shadow">
+    <div className="max-w-md mx-auto mt-10 p-4 bg-purple-100 rounded shadow">
       <h2 className="text-xl font-bold mb-4">Calculator</h2>
       <form onSubmit={handleSubmit} className="space-y-2">
         <input type="number" value={number1} onChange={(e) => setNumber1(e.target.value)} className="w-full border p-2 rounded" placeholder="Enter first number"/>
